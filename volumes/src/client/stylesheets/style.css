@@ -1,0 +1,369 @@
+/* Ce fichier contient les styles CSS pour l'application */
+body {
+    background-color: #000;
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    font-family: Arial, sans-serif;
+    /* Police de caractères */
+    margin: 0;
+    /* Supprime les marges par défaut */
+    padding: 0;
+    /* Supprime les marges intérieures par défaut */
+    text-align: center;
+    /* Centre le texte */
+}
+
+h1 {
+    font-size: 2em;
+    /* Taille de police */
+    margin: 20px 0;
+    /* Marge extérieure */
+}
+
+button {
+    background-color: #fff;
+    /* Couleur de fond */
+    color: #000;
+    /* Couleur du texte */
+    border: 1px solid #fff;
+    /* Bordure */
+    padding: 10px 20px;
+    /* Espacement intérieur */
+    cursor: pointer;
+    /* Curseur de souris */
+    font-size: 1em;
+    /* Taille de police */
+    transition: 0.3s;
+    /* Durée de l'animation */
+    border-radius: 10px;
+    /* Bords arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    /* Effet de volume */
+}
+
+button:hover {
+    background-color: #ccc;
+    /* Accentuation de la couleur au survol */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
+    /* Accentuation du volume au survol */
+    transform: translateY(-2px);
+    /* Légère élévation */
+}
+
+button:active {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Réduction de l'ombre lors du clic */
+    transform: translateY(2px);
+    /* Bouton "appuyé" */
+}
+
+
+#task-list {
+    margin: 20px auto;
+    /* Centrer la liste */
+    width: 75%;
+    /* Largeur de la liste */
+    text-align: left;
+    /* Alignement du texte */
+}
+
+#task-form {
+    margin-top: 20px;
+    /* Marge supérieure */
+}
+
+.task-item {
+    display: flex;
+    /* Flexbox */
+    flex-direction: column;
+    /* Alignement vertical */
+    justify-content: flex-start;
+    /* Alignement vertical */
+    align-items: stretch;
+    /* Alignement horizontal */
+    padding: 10px;
+    /* Espacement intérieur */
+    margin: 5px 0;
+    /* Marge extérieure */
+    border: 1px solid #fff;
+    /* Bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+    background-color: #fff;
+    /* Couleur de fond */
+    color: #000;
+    /* Couleur du texte */
+    transition: background-color 0.3s;
+    /* Animation de transition */
+}
+
+.task-header {
+    display: flex;
+    /* Flexbox */
+    justify-content: space-between;
+    /* Alignement horizontal */
+    align-items: center;
+    /* Alignement vertical */
+}
+
+.complete-button {
+    background-color: #000;
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    border: none;
+    /* Pas de bordure */
+    padding: 5px 10px;
+    /* Espacement intérieur */
+    cursor: pointer;
+    /* Curseur de souris */
+    border-radius: 5px;
+    /* Bords arrondis */
+    transition: background-color 0.3s;
+    /* Animation de transition */
+}
+
+.complete-button:hover {
+    background-color: #444;
+    /* Accentuation de la couleur au survol */
+}
+
+.task-item.completed {
+    background-color: #ccc;
+    /* Tâches réalisées */
+    text-decoration: line-through;
+    /* Texte barré */
+}
+
+.task-actions button {
+    background-color: #000;
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    border: none;
+    /* Pas de bordure */
+    padding: 5px 10px;
+    /* Espacement intérieur */
+    cursor: pointer;
+    /* Curseur de souris */
+    border-radius: 5px;
+    /* Bords arrondis */
+    transition: background-color 0.3s;
+    /* Animation de transition */
+}
+
+.task-actions button:hover {
+    background-color: #444;
+    /* Accentuation de la couleur au survol */
+}
+
+.popup {
+    position: fixed;
+    /* Fixe la fenêtre à une position relative à la fenêtre */
+    top: 50%;
+    /* Distance par rapport au haut */
+    left: 50%;
+    /* Distance par rapport à la gauche */
+    transform: translate(-50%, -50%);
+    /* Centre la fenêtre */
+    background-color: #222;
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    padding: 20px;
+    /* Espacement intérieur */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    /* Effet de volume */
+    display: none;
+    /* Masque la fenêtre */
+}
+
+.popup-content {
+    text-align: center;
+    /* Alignement du texte */
+}
+
+.popup .close {
+    position: absolute;
+    /* Fixe le bouton à une position relative à la fenêtre */
+    top: 10px;
+    /* Distance par rapport au haut */
+    right: 10px;
+    /* Distance par rapport à la droite */
+    cursor: pointer;
+    /* Curseur de souris */
+    font-size: 1.5em;
+    /* Taille de police */
+}
+
+#login-button {
+    position: fixed;
+    /* Fixe le bouton à une position relative à la fenêtre */
+    top: 10px;
+    /* Distance par rapport au haut */
+    right: 10px;
+    /* Distance par rapport à la droite */
+    background-color: #fff;
+    /* Couleur de fond */
+    color: #000;
+    /* Couleur du texte */
+    border: 1px solid #fff;
+    /* Bordure */
+    padding: 10px 20px;
+    /* Espacement intérieur */
+    cursor: pointer;
+    /* Curseur de souris */
+    font-size: 1em;
+    /* Taille de police */
+    transition: 0.3s;
+    /* Durée de l'animation */
+    z-index: 1000;
+    /* Assure que le bouton est au-dessus des autres éléments */
+}
+
+#login-button:hover {
+    background-color: #ccc;
+    /* Accentuation de la couleur au survol */
+}
+
+.comment {
+    position: relative;
+    /* Position relative */
+    padding: 10px;
+    /* Espacement intérieur */
+    margin-bottom: 10px;
+    /* Marge inférieure */
+    background: #eef;
+    /* Couleur de fond */
+    border: 1px solid #ddd;
+    /* Bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+}
+
+.comment-header {
+    display: flex;
+    /* Flexbox */
+    justify-content: space-between;
+    /* Alignement horizontal */
+    font-size: 0.8em;
+    /* Taille de police */
+    margin-bottom: 5px;
+    /* Marge inférieure */
+}
+
+.comment-user {
+    font-weight: bold;
+    /* Texte en gras */
+    color: #333;
+    /* Couleur du texte */
+}
+
+.comment-date {
+    color: #666;
+    /* Couleur du texte */
+    font-style: italic;
+    /* Texte en italique */
+}
+
+.comment-content {
+    font-size: 1em;
+    /* Taille de police */
+    color: #000;
+    /* Couleur du texte */
+}
+
+
+.comments-section {
+    margin-top: 10px;
+    /* Marge supérieure */
+    padding: 10px;
+    /* Espacement intérieur */
+    background-color: #f9f9f9;
+    /* Couleur de fond */
+    border: 1px solid #ccc;
+    /* Bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+    font-size: 0.9em;
+    /* Taille de texte légèrement plus petite */
+    max-width: 100%;
+    /* Largeur maximale */
+    margin-left: 50px;
+    /* Marge gauche */
+    margin-right: 50px;
+    /* Marge droite */
+}
+
+.comments-list {
+    margin-top: 10px;
+    /* Marge supérieure */
+    max-height: 200px;
+    /* Hauteur maximale */
+    overflow-y: auto;
+    /* Défilement vertical */
+    padding: 5px;
+    /* Espacement intérieur */
+    background: #fff;
+    /* Couleur de fond */
+    border: 1px solid #ddd;
+    /* Bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+}
+
+.comments-list .comment {
+    margin-bottom: 5px;
+    /* Marge inférieure */
+    padding: 5px;
+    /* Espacement intérieur */
+    background: #eef;
+    /* Couleur de fond */
+    border-radius: 3px;
+    /* Bords arrondis */
+}
+
+.comments-section {
+    margin-top: 10px;
+    /* Marge supérieure */
+    padding: 10px;
+    /* Espacement intérieur */
+    background-color: #f9f9f9;
+    /* Couleur de fond */
+    border: 1px solid #ccc;
+    /* Bordure */
+    border-radius: 5px;
+    /* Bords arrondis */
+    font-size: 0.9em;
+    /* Taille de texte légèrement plus petite */
+}
+
+.comments-section textarea,
+.comments-section .comments-list {
+    width: 100%;
+    /* S'assure que les éléments internes ne dépassent pas */
+    max-width: 100%;
+    /* Empêche le débordement */
+    box-sizing: border-box;
+    /* Inclut le padding dans la largeur totale */
+}
+
+
+.comments-section button {
+    background-color: #000;
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    width: 100%;
+    /* S'assure que les éléments internes ne dépassent pas */
+    max-width: 100%;
+    /* Empêche le débordement */
+    box-sizing: border-box;
+    /* Inclut le padding dans la largeur totale */
+}
+
+.comments-section button:hover {
+    background-color: #444;
+    /* Accentuation de la couleur au survol */
+}

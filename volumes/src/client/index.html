@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Tâches</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <!-- Titre principal de la page -->
+    <h1>Gestion des Tâches</h1>
+
+    <!-- Bouton de connexion -->
+    <button id="login-button" onclick="openLoginPopup()">Se connecter</button>
+
+    <!-- Liste des tâches qui sera peuplée dynamiquement -->
+    <div id="task-list">
+        <!-- Les tâches seront affichées ici -->
+    </div>
+
+    <!-- Formulaire pour ajouter une nouvelle tâche, caché par défaut -->
+    <div id="task-form" style="display: none;">
+        <input type="text" id="task-input" placeholder="Nouvelle tâche">
+        <input type="date" id="due-date-input" placeholder="Date limite (optionnelle)">
+        <button onclick="addTask()">Ajouter</button>
+    </div>
+
+    <!-- Popup de connexion, caché par défaut -->
+    <div id="login-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <!-- Bouton pour fermer la popup -->
+            <span class="close" onclick="closeLoginPopup()">&times;</span>
+            <h2>Connexion</h2>
+            <!-- Champs pour saisir le nom d\'utilisateur et le mot de passe -->
+            <input type="text" id="login-username" placeholder="Nom d'utilisateur">
+            <input type="password" id="login-password" placeholder="Mot de passe">
+            <button onclick="connect()">Se connecter</button>
+        </div>
+    </div>
+
+    <!-- Inclusion de jQuery pour faciliter la manipulation du DOM -->
+    <script type="text/javascript" src="javascripts/helpers/jquery-1.10.2.min.js"></script>
+    <!-- Inclusion du script principal de gestion des tâches -->
+    <script src="javascripts/index.js"></script>
+</body>
+
+</html>

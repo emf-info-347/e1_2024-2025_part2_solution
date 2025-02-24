@@ -1,0 +1,62 @@
+services:
+  user-service:
+    build:
+      context: /home/admin_ubuntu/volumes/src/user-service
+      dockerfile: Dockerfile
+    container_name: user-service
+    volumes:
+      - /home/admin_ubuntu/volumes/src/user-service:/var/www/html
+    ports:
+      - "8081:80"
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+    depends_on:
+      - database
+
+  task-service:
+    build:
+      context: /home/admin_ubuntu/volumes/src/task-service
+      dockerfile: Dockerfile
+    container_name: task-service
+    volumes:
+      - /home/admin_ubuntu/volumes/src/task-service:/var/www/html
+    ports:
+      - "8082:80"
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - /home/admin_ubuntu/volumes/data:/var/lib/mysql
+      - /home/admin_ubuntu/volumes/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    depends_on:
+      - database
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8083:80"
+
+  frontend:
+    image: nginx:latest
+    container_name: frontend
+    volumes:
+      - /home/admin_ubuntu/volumes/src/client:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - user-service
+      - task-service
